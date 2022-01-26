@@ -11,6 +11,14 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devServer: {
+    port: 3000,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    hot: true,
+    historyApiFallback: { index: "index.html" }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html')
